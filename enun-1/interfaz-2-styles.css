@@ -66,14 +66,52 @@ main{
     background-color: #E5E5E5;
 }
 
-.sideBar{
+.sideBar {
     background-color: #1B1B1B;
-    
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
 
     height: 90vh;
     width: 60%;
+
+    padding: 20px;  
+    box-sizing: border-box;
+}
+
+.upsite {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 100%;
+    height: 50%;
+}
+.right {
+
+    width: 100%;
+    max-width: 200px; 
+}
+
+.sideBarCircle {
+    width: 100%;
+    aspect-ratio: 1;    
+    border-radius: 50%;   
+    background-color: #DEBB45;
+}
+
+.left{
+    padding: 10px;
+}
+
+.containerSide{
+
+    margin: 10px;
+    background-color: yellow;
+    height: 20px;
+    width: 300px;
+}
+
+.downsite {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 50%;
 }
