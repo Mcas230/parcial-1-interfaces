@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Panel de control financiero personal.">
+
+        <title>Dashboard financiero</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Josefin+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="financial-dashboard-styles.css">
+    </head>
+
+    <body>
+        <header class="topbar">
+            <a class="brand" href="#" aria-label="Finanzas, inicio">
+                <span class="brandMark" aria-hidden="true">F</span>
+                <span>Finanzas</span>
+            </a>
+
+            <div class="topbarInfo">
+                <span class="statusDot" aria-hidden="true"></span>
+                <span>Tu resumen financiero</span>
+            </div>
+        </header>
+
+        <div class="dashboardLayout">
+            <aside class="sidebar" aria-label="Barra lateral">
+                <nav aria-label="Navegación principal">
+                    <p class="navLabel">MENÚ</p>
+                    <ul class="navList">
+                        <li><a class="navLink isActive" href="#" aria-current="page"><span class="navIcon" aria-hidden="true">⌂</span>Inicio</a></li>
+                        <li><a class="navLink" href="#"><span class="navIcon" aria-hidden="true">↗</span>Ingresos</a></li>
+                        <li><a class="navLink" href="#"><span class="navIcon" aria-hidden="true">↘</span>Gastos</a></li>
+                        <li><a class="navLink" href="#"><span class="navIcon" aria-hidden="true">▥</span>Reportes</a></li>
+                    </ul>
+                </nav>
+
+                <div class="sidebarNote">
+                    <span class="noteMark" aria-hidden="true">✦</span>
+                    <p>Pequeños pasos, mejores decisiones.</p>
+                </div>
+            </aside>
+
+            <main class="mainContent">
+                <section class="pageIntro" aria-labelledby="pageTitle">
+                    <div>
+                        <p class="eyebrow">PANEL GENERAL</p>
+                        <h1 id="pageTitle">¡Hola de nuevo!</h1>
+                        <p class="introText">Aquí tienes el resumen de tus finanzas.</p>
+                    </div>
+                    <span class="dateLabel">Resumen mensual</span>
+                </section>
+
+                <section class="summarySection" aria-labelledby="summaryTitle">
+                    <div class="sectionHeading">
+                        <h2 id="summaryTitle">Resumen financiero</h2>
+                        <p>Una vista rápida de tu dinero</p>
+                    </div>
+
+                    <div class="summaryGrid">
+                        <article class="summaryCard balanceCard">
+                            <div class="cardTop">
+                                <span class="cardLabel">Saldo total</span>
+                                <span class="cardIcon balanceIcon" aria-hidden="true">$</span>
+                            </div>
+                            <p class="cardAmount">$ 0,00</p>
+                            <p class="cardFootnote">Balance disponible</p>
+                        </article>
+
+                        <article class="summaryCard">
+                            <div class="cardTop">
+                                <span class="cardLabel">Ingresos del mes</span>
+                                <span class="cardIcon incomeIcon" aria-hidden="true">↗</span>
+                            </div>
+                            <p class="cardAmount">$ 0,00</p>
+                            <p class="cardFootnote">Total recibido este mes</p>
+                        </article>
+
+                        <article class="summaryCard">
+                            <div class="cardTop">
+                                <span class="cardLabel">Gastos del mes</span>
+                                <span class="cardIcon expenseIcon" aria-hidden="true">↘</span>
+                            </div>
+                            <p class="cardAmount">$ 0,00</p>
+                            <p class="cardFootnote">Total gastado este mes</p>
+                        </article>
+                    </div>
+                </section>
+
+                <section class="emptyState" aria-labelledby="activityTitle">
+                    <div class="emptyIcon" aria-hidden="true">＋</div>
+                    <div>
+                        <h2 id="activityTitle">Tu actividad aparecerá aquí</h2>
+                        <p>Cuando registres ingresos o gastos, podrás consultar un resumen de tus movimientos.</p>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
