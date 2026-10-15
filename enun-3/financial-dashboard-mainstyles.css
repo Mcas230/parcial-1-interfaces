@@ -1,8 +1,7 @@
-
 :root {
     --color-background: #0A0E12;
     --image-background: url("images/background.jpg");
-    --color-surface: rgba(10, 14, 18, 0.60);
+    --color-surface: rgba(10, 14, 18, 0.72);
     --color-accent: #E09B3D;
     --color-text: #FFFFFF;
     --color-text-secondary: #94A3B8;
@@ -28,15 +27,19 @@ body {
     min-height: 100vh;
 
     background-color: var(--color-background);
-    background-image: var(--image-background);
+    background-image:
+        linear-gradient(rgba(10, 14, 18, 0.25), rgba(10, 14, 18, 0.45)),
+        var(--image-background);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    background-attachment: fixed;
 
     font-family: var(--font-body);
     color: var(--color-text);
 }
 
+/* Distribución principal */
 .mainContainer {
     display: flex;
     flex-direction: row;
@@ -53,6 +56,7 @@ body {
     width: 100%;
     max-width: 420px;
     padding: var(--card-padding);
+    flex-shrink: 0;
 
     background-color: var(--color-surface);
     border: 1px solid var(--color-border);
@@ -64,17 +68,24 @@ body {
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
 }
 
+.loginTitle {
+    margin: 0 0 10px;
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    text-align: center;
+}
+
+.loginSubtitle {
+    margin: 0 0 28px;
+    color: var(--color-text-secondary);
+    font-size: 0.95rem;
+    text-align: center;
+}
+
 .loginBox form {
     display: flex;
     flex-direction: column;
     gap: var(--element-gap);
-}
-
-.loginTitle {
-    margin: 0 0 12px;
-    font-family: var(--font-heading);
-    font-size: 2rem;
-    text-align: center;
 }
 
 .loginBox label {
@@ -95,6 +106,7 @@ body {
     border-radius: 8px;
 
     outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .loginBox input::placeholder {
@@ -106,31 +118,36 @@ body {
     box-shadow: 0 0 0 2px rgba(224, 155, 61, 0.2);
 }
 
+/* Enlace con apariencia de botón */
 .loginButton {
+    display: block;
     margin-top: 12px;
     padding: 13px;
 
     background-color: var(--color-accent);
-    border: none;
+    border: 1px solid transparent;
     border-radius: 8px;
 
+    color: var(--color-background);
     font-family: var(--font-body);
     font-size: 1rem;
     font-weight: 700;
+    text-align: center;
+    text-decoration: none;
 
     cursor: pointer;
-    transition: background-color 0.2s ease;
+    transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
 .loginButton:hover {
     background-color: #F0AE55;
+    transform: translateY(-2px);
 }
 
-.loginButton a {
-    color: #0A0E12;
-    text-decoration: none;
+.loginButton:focus-visible {
+    outline: 2px solid var(--color-text);
+    outline-offset: 3px;
 }
-
 
 /* Eslogan */
 .loginMessage {
@@ -140,21 +157,20 @@ body {
 
     flex: 1;
     max-width: 600px;
+    min-width: 0;
     padding: 40px;
 
     font-family: var(--font-heading);
     font-size: clamp(1.5rem, 2.5vw, 2.5rem);
     line-height: 1.3;
     text-align: right;
-    color: #FFFFFF;
+    color: var(--color-text);
 
-    /* Mejora la separación entre letras y fotografía */
     text-shadow:
         0 2px 4px var(--slogan-shadow),
         0 4px 12px var(--slogan-shadow),
         0 8px 28px rgba(0, 0, 0, 0.9);
 
-    /* Oscurece gradualmente el área detrás del texto */
     background: linear-gradient(
         90deg,
         transparent 0%,
@@ -164,7 +180,7 @@ body {
     border-radius: 16px;
 }
 
-.loginMessage h1 {
+.loginMessage h2 {
     max-width: 550px;
     margin: 0;
     font-weight: 700;
@@ -177,7 +193,6 @@ body {
         flex-direction: column;
         justify-content: center;
         gap: 32px;
-
         padding: 24px;
     }
 
@@ -187,6 +202,7 @@ body {
     }
 
     .loginMessage {
+        width: 100%;
         padding: 24px;
         text-align: center;
 
